@@ -1,12 +1,13 @@
-> This repository aims to build a text encoder network which can be used to encode texts into vectors and calculate the semantic textual similarity between these texts.
+> This repository aims to build a text encoder network which can be used to encode texts into vectors and calculate the **semantic textual similarity (STS)** between these texts.
 
 ## Introduction
 
-`**Step1: Training**`
+`Step1: Training`
 
-This method chooses classification tasks as the optimization objective rather than optimizing textual similarity directly so that we do not need to sample negative samples from datasets that is done by many typical methods like **Siamese network**.Then, we choose **amsoftmax** as loss function which can ensure that smaples in the same class are more cohesive.
+This method will choose classification tasks as the optimization objective rather than optimizing textual similarity directly so that we do not need to sample negative samples from datasets which is always taken by many typical methods like **Siamese network**.Then, we choose **amsoftmax** as loss function which can ensure that smaples in the same class are more cohesive.
+These two advantages greatly improve the performance.
 
-`**Step2: Applying**`
+`Step2: Applying`
 
 After training, we take the hidden layer before classification layer as textual representation vectors and calculate the semantic similarity.
 

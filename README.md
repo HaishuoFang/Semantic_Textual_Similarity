@@ -4,7 +4,7 @@
 
 `Step1: Training`
 
-This method will choose classification tasks as the optimization objective rather than optimizing textual similarity directly so that we do not need to sample negative samples from datasets which is always taken by many typical methods like **Siamese network**.Then, we choose **amsoftmax** as loss function which can ensure that smaples in the same class are more cohesive.
+This method will choose classification tasks as the optimization objective rather than optimizing textual similarity directly so that we do not need to sample negative samples from datasets which is always taken by many typical methods like **Siamese network**.Then, we choose [amsoftmax](https://arxiv.org/abs/1801.05599) as loss function which can ensure that smaples in the same class are more cohesive.
 These two advantages greatly improve the performance.
 
 `Step2: Applying`
@@ -12,7 +12,7 @@ These two advantages greatly improve the performance.
 After training, we take the hidden layer before classification layer as textual representation vectors and calculate the semantic similarity.
 
 ## Requirements
-- tensorflow >=1.0.4
+- tensorflow >=1.4.0
 - python3
 - tqdm
 - yaml
